@@ -5,29 +5,31 @@ $(function() {
     	$this = $(this);
 		loader.removeClass("hidden");
 		var receiver = $("#receiver").val();
+    var captcha =  $("#g-recaptcha-response").val();
 		$.ajax({
 		  	url:"/",
 		  	type:"POST",
-		  	data: $this.serialize()
+		  	data: {
+		  		receiver: receiver,
+          captcha: captcha
+		  	}
 		}).done(function(data) {
-			grecaptcha.reset();
 			if (!data.success) {
 				loader.addClass("hidden");
-				console.log(data)
-				console.log(data.error)
-				swal("Error", data.error.message, "error");
+				swal(data.error.title, data.error.message, "error");
 				return;
 			}
 
-			$("#receiver").val('');
-			loader.addClass("hidden");
-			swal("Success",
-			  `0.5 SPOA has successfully transferred to <a href="https://blockscout.com/poa/sokol/tx/${data.success.txHash}" target="blank">${receiver}</a>`,
-			  "success"
-			);
+			getTxCallBack(data.success.txHash, function() {
+				$("#receiver").val('');
+				loader.addClass("hidden");
+				swal("Success",
+				  "15 XDC is successfully transfered to " + receiver +" in Tx<br /><a href='http://www.xinfin.info/" + data.success.txHash + "' target='_blank'>" + data.success.txHash + "</a>",
+				  "success"
+				);
+				grecaptcha.reset();
+			});
 		}).fail(function(err) {
-			grecaptcha.reset();
-			console.log(err);
 			loader.addClass("hidden");
 		});
 	});
