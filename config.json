@@ -2,15 +2,15 @@
   "environment": "live",
   "debug": false,
   "Captcha": {
-    "secret": ""
+    "secret": "xxx"
   },
   "Ethereum": {
-    "milliEtherToTransfer": 500,
-    "gasLimit": "21000",
+    "etherToTransfer": 10000000,
+    "gasLimit": "0x7b0c",
     "live": {
-      "rpc": "http://127.0.0.1:8545",
-      "account": "",
-      "privateKey": ""
+      "rpc": "http://rpc.testnet.xinfin.network:8545",
+      "account": "0xf01B8089eA35E10c1DB89C80565204b1C3ffF95c",
+      "privateKey": "xxx"
     }
   }
 }
