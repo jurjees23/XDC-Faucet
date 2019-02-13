@@ -1,4 +1,4 @@
-## Xinfin Testnet Faucet
+## XinFin Testnet Faucet
 
 ### Building from source
 
