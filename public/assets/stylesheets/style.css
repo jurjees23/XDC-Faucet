@@ -42,8 +42,9 @@ a:hover{text-decoration:underline;}
 
 .fa, .far, .fas{important;font-size:30px!important;}
 .green{border-radius:50%;border:2px solid #aeafb0;color:#12bc01;padding:6px;}
+.modal-content{text-align:center;}
 .modal-footer{display:block;}
-.modal-content h1{font-weight:600;letter-spacing:normal;}
-.modal-content p{font-size:16px;letter-spacing:0.05rem;line-height:20px;word-wrap:break-word;}
+.modal-content h1{font-weight:600;letter-spacing:normal;margin-top:10px;margin-bottom:15px;}
+.modal-content p{font-size:16px;letter-spacing:0.05rem;line-height:20px;word-wrap:break-word;margin-bottom:10px;}
 .hash{color:#096db0;text-decoration:underline;}
 .hash:hover{text-decoration:none;}
