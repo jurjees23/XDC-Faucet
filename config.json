@@ -8,7 +8,7 @@
     "etherToTransfer": 10000000,
     "gasLimit": "0x7b0c",
     "live": {
-      "rpc": "http://rpc.testnet.xinfin.network",
+      "rpc": "http://rpc.testnet.xinfin.network:8545",
       "account": "0xf01B8089eA35E10c1DB89C80565204b1C3ffF95c",
       "privateKey": "xxx"
     }
