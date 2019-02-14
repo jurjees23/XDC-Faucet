@@ -8,9 +8,9 @@
     "etherToTransfer": 100,
     "gasLimit": "0x7b0c",
     "live": {
-      "rpc": "http://localhost:8545",
+      "rpc": "http://rpc.testnet.xinfin.network:8545",
       "account": "0xf01B8089eA35E10c1DB89C80565204b1C3ffF95c",
-      "privateKey": "3a178a5bfba4cf7064050616084179e6b4b7ec2128459f5eeae4eac6c8d3169e"
+      "privateKey": "xxx"
     }
   }
 }
