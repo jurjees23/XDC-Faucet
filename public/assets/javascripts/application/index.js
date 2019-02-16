@@ -24,7 +24,7 @@ $(function() {
 				$("#receiver").val('');
 				loader.addClass("hidden");
 				swal("Success",
-				  "15 XDC is successfully transfered to " + receiver +" in Tx<br /><a href='http://www.xinfin.info/" + data.success.txHash + "' target='_blank'>" + data.success.txHash + "</a>",
+				  "15 TOMO is successfully transfered to " + receiver +" in Tx<br /><a href='https://scan.testnet.tomochain.com/txs/" + data.success.txHash + "' target='_blank'>" + data.success.txHash + "</a>",
 				  "success"
 				);
 				grecaptcha.reset();
