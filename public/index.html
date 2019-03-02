@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="general-label">
-                        <form class="form-inline" action="/" method="POST" id="faucetForm">
+                        <form class="form-inline" id="faucetForm">
                             <div class="col-md-8 mb-sm-3">
                                 <div class="form-group">
                                     <label class="sr-only" for="XDCaddress">XDC address</label>
@@ -131,9 +131,16 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p><i class="fa fa-check green"></i></p>
-                    <h1 class="text-grey">Success</h1>
-                    <p>10,000,000 XDC is successfully transfered</p>
+                    <div id="modalSuccess" style="display: none">
+                        <p><i class="fa fa-check green"></i></p>
+                        <h1 class="text-grey">Success</h1>
+                        <p>10,000,000 XDC is successfully transfered</p>
+                    </div>
+                    <div id="modalError" style="display: none">
+                        <p><i class="fa fa-check red"></i></p>
+                        <h1 class="text-grey">Failed</h1>
+                        <p id="modalErrorText"></p>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info btn-lg" data-dismiss="modal">OK</button>
@@ -145,7 +152,7 @@
 		
       </div>
 
-    <script src="./assets/javascripts/application.js?v=1.4" type="text/javascript"></script>
+    <!-- <script src="./assets/javascripts/application.js?v=1.4" type="text/javascript"></script> -->
 
     <!-- jQuery  -->
     <script src="./assets/javascripts/js/jquery.min.js"></script>
@@ -155,6 +162,8 @@
     <script src="./assets/javascripts/js/main.js"></script>
     <script src="./assets/javascripts/js/particles/particles.js"></script>
     <script src="./assets/javascripts/js/particles/app.js"></script>
+    <script src="./assets//javascripts/application/index.js"></script>
+    <script src="./assets//javascripts/application/getTxCallBack.js"></script>
     
     
 <script type="text/javascript"> 
