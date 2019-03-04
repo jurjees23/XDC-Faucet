@@ -7,13 +7,13 @@ $(function() {
 		$this = $(this);
 		loader.removeClass("hidden");
 		var receiver = $("#receiver").val();
-    var captcha =  $("#g-recaptcha-response").val();
+    	var captcha =  $("#g-recaptcha-response").val();
 		$.ajax({
 		  	url:"/",
 		  	type:"POST",
 		  	data: {
 		  		receiver: receiver,
-          captcha: captcha
+          		captcha: captcha
 		  	}
 		}).done(function(data) {
 			console.log(data);
@@ -27,6 +27,10 @@ $(function() {
 			} else {
 				$('#modalSuccess').show();
 				$('#modalError').hide();
+				var hashLink = `
+								<a href="https://explorer_testnet.xinfin.network/tx/`+data.success.txHash+`"></a>
+								`;
+				$('#hashLink').html(hashLink)
 			}
 
 			getTxCallBack(data.success.txHash, function() {
