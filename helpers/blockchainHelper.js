@@ -7,10 +7,11 @@ module.exports = function (app) {
 	app.getTxCallBack = getTxCallBack;
  
 	function configureWeb3(config, cb) {
+		
 		var web3;
 		if (typeof web3 !== 'undefined') web3 = new Web3(web3.currentProvider);
 		else web3 = new Web3(new Web3.providers.HttpProvider(config.Ethereum[config.environment].rpc));
-
+		console.log('configureweb3', web3.isConnected())
 		if (!web3.isConnected()) return cb({code: 500, title: "Error", message: "check RPC"}, web3);
 		
 		cb(null, web3);

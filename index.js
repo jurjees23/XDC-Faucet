@@ -3,7 +3,7 @@ var fs = require('fs');
 var https = require('https');
 var bodyParser = require('body-parser');
 var querystring = require('querystring');
-var Web3 = require('web3');
+var Web3 = require('xdc3');
 var EthereumTx = require('ethereumjs-tx');
 var app = express();
 
