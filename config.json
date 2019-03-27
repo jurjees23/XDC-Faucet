@@ -5,12 +5,12 @@
     "secret": "xxx"
   },
   "Ethereum": {
-    "etherToTransfer": 1,
+    "etherToTransfer": 10000000,
     "gasLimit": "0x7b0c",
     "live": {
       "rpc": "https://testnet.xinfin.network",
       "account": "xdc6d0FB3E407B1300b7a586826dDB3B4D3BCE920e8",
-      "privateKey": "853d8e4db41ddfd942deca119cb18147efa45a3201e66788c937990f6d2a0322"
+      "privateKey": "xxx"
     }
   }
 }
