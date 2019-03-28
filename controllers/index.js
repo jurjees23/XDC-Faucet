@@ -30,7 +30,7 @@ module.exports = function (app) {
 		var senderPrivateKey = config.Ethereum[config.environment].privateKey;
 		const privateKeyHex = Buffer.from(senderPrivateKey, 'hex')
 		console.log('receiver', receiver)
-		if (receiver.substring(0,3) === "xdc") {
+		if (receiver.substring(0,3) == "xdc") {
 			receiver = "0x" + receiver.substring(3);
 		}
 		if (!web3.isAddress(receiver)) return generateErrorResponse(response, {code: 500, title: "Error", message: "invalid address"});
