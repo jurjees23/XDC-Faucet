@@ -30,6 +30,9 @@ module.exports = function (app) {
 		var senderPrivateKey = config.Ethereum[config.environment].privateKey;
 		const privateKeyHex = Buffer.from(senderPrivateKey, 'hex')
 		console.log('receiver', receiver)
+		if (receiver.substring(0,3) == "XDC") {
+			receiver = "0x" + receiver.substring(3);
+		}
 		if (receiver.substring(0,3) == "xdc") {
 			receiver = "0x" + receiver.substring(3);
 		}
