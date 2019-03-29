@@ -48,3 +48,10 @@ a:hover{text-decoration:underline;}
 .modal-content p{font-size:16px;letter-spacing:0.05rem;line-height:20px;word-wrap:break-word;margin-bottom:10px;}
 .hash{color:#096db0;text-decoration:underline;}
 .hash:hover{text-decoration:none;}
+
+.red {
+    color: tomato;
+}
+.green {
+    color: #29b348;
+}
