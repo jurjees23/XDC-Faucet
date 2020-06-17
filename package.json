@@ -1,16 +1,17 @@
 {
-  "name": "poa-network-sokol-faucet",
+  "name": "xdc-network-faucet",
   "version": "1.0.0",
-  "description": "Sokol tetnet POA Network faucet",
+  "description": "XDC Network Faucet",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "pm2 start index.js. --name Faucet"
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/faucet-sokol.git"
+    "url": "https://github.com/XinFinOrg/Faucet"
   },
-  "author": "poanetwork",
+  "author": "xdcnetwork",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.17.1",
