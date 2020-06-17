@@ -4,7 +4,7 @@
   "description": "XDC Network Faucet",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js. --name Faucet",
+    "start": "pm2 start index.js --name Faucet",
     "dev": "nodemon index.js"
   },
   "repository": {
