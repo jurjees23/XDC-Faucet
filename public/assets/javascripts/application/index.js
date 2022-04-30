@@ -1,49 +1,33 @@
 $(function() {
 	var loader = $(".loading-container");
-	$("#requestTokens").on('click', function( e ) {
+	$( "#faucetForm" ).submit(function( e ) {
 		e.preventDefault();
-		$('#modalSuccess').hide();
-		$('#modalError').hide();
-		$this = $(this);
+    	$this = $(this);
 		loader.removeClass("hidden");
 		var receiver = $("#receiver").val();
-    	var captcha =  $("#g-recaptcha-response").val();
 		$.ajax({
 		  	url:"/",
 		  	type:"POST",
-		  	data: {
-		  		receiver: receiver,
-          		captcha: captcha
-		  	}
+		  	data: $this.serialize()
 		}).done(function(data) {
-			console.log(data);
+			grecaptcha.reset();
 			if (!data.success) {
 				loader.addClass("hidden");
-				$('#modalSuccess').hide();
-				$('#modalError').show();
-				$('#modalErrorText').html(data.error.message);
-				// swal(data.error.title, data.error.message, "error");
+				console.log(data)
+				console.log(data.error)
+				swal("Error", data.error.message, "error");
 				return;
-			} else {
-				$('#modalSuccess').show();
-				$('#modalError').hide();
-				var hashLink = `
-								<a href="https://explorer.apothem.network/tx/`+data.success.txHash+`"> Check Txhash :- `+data.success.txHash+`</a>
-								`;
-				$('#hashLink').html(hashLink)
 			}
 
-			getTxCallBack(data.success.txHash, function() {
-				$("#receiver").val('');
-				loader.addClass("hidden");
-				// swal("Success",
-				//   "15 TOMO is successfully transfered to " + receiver +" in Tx<br /><a href='https://scan.testnet.tomochain.com/txs/" + data.success.txHash + "' target='_blank'>" + data.success.txHash + "</a>",
-				//   "success"
-				// );
-				grecaptcha.reset();
-			});
+			$("#receiver").val('');
+			loader.addClass("hidden");
+			swal("Success",
+			  `1000 XDC has been successfully transferred to <a href="https://apothem.blocksscan.io/txs/${data.success.txHash}" target="blank">${receiver}</a>`,
+			  "success"
+			);
 		}).fail(function(err) {
-			console.log('err', err);
+			grecaptcha.reset();
+			console.log(err);
 			loader.addClass("hidden");
 		});
 	});
