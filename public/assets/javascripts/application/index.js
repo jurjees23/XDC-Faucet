@@ -22,7 +22,7 @@ $(function() {
 			$("#receiver").val('');
 			loader.addClass("hidden");
 			swal("Success",
-			  `1000 XDC has been successfully transferred to <a href="https://apothem.blocksscan.io/txs/${data.success.txHash}" target="blank">${receiver}</a>`,
+			  `1000 Test XDC has been successfully transferred to <a href="https://apothem.blocksscan.io/txs/${data.success.txhash}" target="blank">${receiver}</a>`,
 			  "success"
 			);
 		}).fail(function(err) {

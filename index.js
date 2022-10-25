@@ -2,6 +2,7 @@ const express = require('express')
 const fs = require('fs')
 const bodyParser = require('body-parser')
 let app = express();
+const morgan = require('morgan')
 
 require('./src/helpers/blockchain-helper')(app)
 
@@ -16,6 +17,7 @@ if (configExists) {
 app.config = config
 
 let web3
+app.use(morgan('short'))
 app.configureWeb3(config)
 .then(web3 => {
 	app.web3 = web3

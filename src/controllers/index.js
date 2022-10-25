@@ -37,6 +37,13 @@ module.exports = function (app) {
 			await sendPOAToRecipient(web3, receiver, response, isDebug)
 		}
 	});
+	app.get('/donate/:address', async function(request, response) {
+		let receiver = request.params.address
+		const isDebug = app.config.debug
+		debug(isDebug, "REQUEST:")
+		debug(isDebug, request.body)
+		await sendPOAToRecipient(web3, receiver, response, isDebug)
+	});
 
 	app.get('/health', async function(request, response) {
 		let balanceInWei
@@ -103,7 +110,7 @@ module.exports = function (app) {
 		.on('receipt', (receipt) => {
 			debug(isDebug, receipt)
 			if (receipt.status == '0x1') {
-				return sendRawTransactionResponse(txHash, response)
+				return sendRawTransactionResponse(txHash, response,receiver,1000)
 			} else {
 				const error = {
 					message: messages.TX_HAS_BEEN_MINED_WITH_FALSE_STATUS,
@@ -116,12 +123,14 @@ module.exports = function (app) {
 		});
 	}
 
-	function sendRawTransactionResponse(txHash, response) {
+	function sendRawTransactionResponse(txHash, response,receiver,ethToSend) {
 		const successResponse = {
 			code: 200, 
 			title: 'Success', 
+			address: receiver,
+			amount:ethToSend, 
 			message: messages.TX_HAS_BEEN_MINED,
-			txHash: txHash
+			txhash: txHash
 		}
 	  	
 	  	response.send({
