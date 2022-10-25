@@ -4,7 +4,7 @@
   "description": "Apothem testnet XDC Network faucet",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --name Faucet",
+    "start": "PORT=3001 pm2 start index.js --name Faucet",
     "dev": "npm run sass && npm run coffee && nodemon index.js",
     "sass": "gulp sass",
     "coffee": "gulp javascript",
