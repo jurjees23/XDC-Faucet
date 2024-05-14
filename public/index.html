@@ -1,73 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XDC Apothem Network Faucet</title>
-    <link rel="stylesheet" type="text/css" href="./assets/stylesheets/application.css">
-    <link rel="apple-touch-icon" href="./favicons/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-chrome-192x192.png">
-    <link rel="mask-icon" color="#6151cc" href="./favicons/safari-pinned-tab.svg">
-    <link rel="manifest" href="./favicons/manifest.webmanifest">
-    <link href="./favicons/favicon.ico" rel="icon" type="image/x-icon">
-        <!-- favicon -->
-        <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
-        <link rel="manifest" href="./favicons/manifest.json">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <link href="./assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="./assets/stylesheets/style.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
-        
-        <link href="./assets/stylesheets/application.css" rel="stylesheet" type="text/css">
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-  </head>
-  <body>
-    <!-- <header class="header">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XDC Apothem Network Faucet</title>
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheets/application.css">
+  <link rel="apple-touch-icon" href="./favicons/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-chrome-192x192.png">
+  <link rel="mask-icon" color="#6151cc" href="./favicons/safari-pinned-tab.svg">
+  <link rel="manifest" href="./favicons/manifest.webmanifest">
+  <link href="./favicons/favicon.ico" rel="icon" type="image/x-icon">
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+  <link rel="manifest" href="./favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <link href="./assets/stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="./assets/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" crossorigin="anonymous">
+
+  <link href="./assets/stylesheets/application.css" rel="stylesheet" type="text/css">
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+  <!-- <header class="header">
       <div class="container">
         <a href="#" class="header-logo"></a>
       </div>
     </header> -->
-    <section class="content">
-      <form action="/" method="POST" id="faucetForm">
-        <div class="request-tokens">
-          <h1>XDC Apothem Network Faucet</h1>
-            <input type="text" id="receiver" name="receiver" placeholder="Enter your XDC address" />
-            <h2>
-              Please use https://rpc.apothem.network RPC to connect<br>
-              to the XDC Apothem testnet.
-            </h2>
-            <div class="g-recaptcha" data-sitekey="6LcHFrMfAAAAAOh-_8Ug2K6xjp3tNh0D07brfjE0"></div>
-<br><br>
-            <button type="submit" id="requestTokens" class="request-tokens-button">Request 1000 XDC</button>
-        </div>
-        <div class="text-xs-center">
-        </div>
-      </form>
-    </section>
-    <div class="loading-container hidden">
-      <div class="loading">
-        <div class="loading-i"></div>
-        <div class="loading-i"></div>
-        <div class="loading-i"></div>
-        <div class="loading-i"></div>
-        <div class="loading-i"></div>
-        <div class="loading-i"></div>
+  <section class="content">
+    <form action="/" method="POST" id="faucetForm">
+      <div class="request-tokens">
+        <h1>XDC Apothem Network Faucet</h1>
+        <input type="text" id="receiver" name="receiver" placeholder="Enter your XDC address" />
+        <h2>
+          Please use https://rpc.apothem.network RPC to connect<br>
+          to the XDC Apothem testnet.
+        </h2>
+        <div class="g-recaptcha" data-sitekey="6LcHFrMfAAAAAOh-_8Ug2K6xjp3tNh0D07brfjE0"></div>
+        <br><br>
+        <button type="submit" id="requestTokens" class="request-tokens-button">Request 1000 XDC</button>
       </div>
+      <div class="text-xs-center">
+      </div>
+    </form>
+  </section>
+  <div class="loading-container hidden">
+    <div class="loading">
+      <div class="loading-i"></div>
+      <div class="loading-i"></div>
+      <div class="loading-i"></div>
+      <div class="loading-i"></div>
+      <div class="loading-i"></div>
+      <div class="loading-i"></div>
     </div>
-    <!-- <footer class="footer">
+  </div>
+  <!-- <footer class="footer">
       <div class="container">
         <p class="rights">2018 POA Network. All rights reserved.</p>
         <a class="logo" href='/'></a>
@@ -79,10 +81,18 @@
         </div>
       </div>
     </footer> -->
-    <script src="./assets/javascripts/application.js?v=1.4" type="text/javascript"></script>
-    <script type="text/javascript">
-      var url = new URL(window.location.href);
-      document.getElementById('receiver').value = url.searchParams.get("address");
-    </script>
-  </body>
+  <script src="./assets/javascripts/application.js?v=1.4" type="text/javascript"></script>
+  <script type="text/javascript">
+    var url = new URL(window.location.href);
+    if (url.searchParams.get("address")) {
+      document.getElementById('receiver').value = url.searchParams.get("address").replace('0x', 'xdc');
+    }
+    document.getElementById('receiver').addEventListener('keyup', function () {
+      var text = this.value;
+      text = text.replace('0x', 'xdc');
+      this.value = text;
+    });
+  </script>
+</body>
+
 </html>
